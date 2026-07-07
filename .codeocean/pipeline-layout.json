@@ -1,0 +1,191 @@
+{
+	"edges": [
+		{
+			"id": "reactflow__edge-capsule_job_dispatch_ecephys_1-capsule_hybrid_generation_ecephys_2",
+			"selected": false,
+			"source": "capsule_job_dispatch_ecephys_1",
+			"target": "capsule_hybrid_generation_ecephys_2"
+		},
+		{
+			"id": "reactflow__edge-capsule_hybrid_generation_ecephys_2-capsule_preprocess_ecephys_3",
+			"source": "capsule_hybrid_generation_ecephys_2",
+			"target": "capsule_preprocess_ecephys_3"
+		},
+		{
+			"id": "reactflow__edge-capsule_preprocess_ecephys_3-capsule_spikesort_kilosort_4_ecephys_5",
+			"selected": false,
+			"source": "capsule_preprocess_ecephys_3",
+			"target": "capsule_spikesort_kilosort_4_ecephys_5"
+		},
+		{
+			"id": "reactflow__edge-capsule_preprocess_ecephys_3-capsule_spikesort_kilosort_25_ecephys_4",
+			"source": "capsule_preprocess_ecephys_3",
+			"target": "capsule_spikesort_kilosort_25_ecephys_4"
+		},
+		{
+			"id": "reactflow__edge-7e95a602-bcd4-4c0b-9337-b365c90eac51-capsule_job_dispatch_ecephys_1",
+			"selected": false,
+			"source": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+			"target": "capsule_job_dispatch_ecephys_1"
+		},
+		{
+			"id": "reactflow__edge-7e95a602-bcd4-4c0b-9337-b365c90eac51-capsule_hybrid_generation_ecephys_2",
+			"source": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+			"target": "capsule_hybrid_generation_ecephys_2"
+		},
+		{
+			"id": "reactflow__edge-7e95a602-bcd4-4c0b-9337-b365c90eac51-capsule_preprocess_ecephys_3",
+			"source": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+			"target": "capsule_preprocess_ecephys_3"
+		},
+		{
+			"id": "reactflow__edge-capsule_spikesort_kilosort_25_ecephys_4-capsule_hybrid_evaluation_ecephys_6",
+			"source": "capsule_spikesort_kilosort_25_ecephys_4",
+			"target": "capsule_hybrid_evaluation_ecephys_6"
+		},
+		{
+			"id": "reactflow__edge-capsule_spikesort_kilosort_4_ecephys_5-capsule_hybrid_evaluation_ecephys_6",
+			"selected": false,
+			"source": "capsule_spikesort_kilosort_4_ecephys_5",
+			"target": "capsule_hybrid_evaluation_ecephys_6"
+		},
+		{
+			"id": "reactflow__edge-capsule_hybrid_generation_ecephys_2-capsule_hybrid_evaluation_ecephys_6",
+			"selected": false,
+			"source": "capsule_hybrid_generation_ecephys_2",
+			"target": "capsule_hybrid_evaluation_ecephys_6"
+		},
+		{
+			"id": "reactflow__edge-capsule_hybrid_evaluation_ecephys_6-results",
+			"source": "capsule_hybrid_evaluation_ecephys_6",
+			"target": "results"
+		},
+		{
+			"id": "reactflow__edge-7e95a602-bcd4-4c0b-9337-b365c90eac51-capsule_hybrid_evaluation_ecephys_6",
+			"selected": false,
+			"source": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+			"target": "capsule_hybrid_evaluation_ecephys_6"
+		},
+		{
+			"id": "reactflow__edge-capsule_preprocess_ecephys_3-capsule_spikesort_spyking_circus_2_ecephys_7",
+			"source": "capsule_preprocess_ecephys_3",
+			"target": "capsule_spikesort_spyking_circus_2_ecephys_7"
+		},
+		{
+			"id": "reactflow__edge-capsule_spikesort_spyking_circus_2_ecephys_7-capsule_hybrid_evaluation_ecephys_6",
+			"selected": false,
+			"source": "capsule_spikesort_spyking_circus_2_ecephys_7",
+			"target": "capsule_hybrid_evaluation_ecephys_6"
+		}
+	],
+	"nodes": [
+		{
+			"data": {
+				"capsule_id": "cb734cf3-2f88-4b69-bf0a-d5869e6706e3"
+			},
+			"id": "capsule_job_dispatch_ecephys_1",
+			"position": {
+				"x": -126.47129310126894,
+				"y": -320.5747000174964
+			},
+			"selected": true,
+			"type": "capsule"
+		},
+		{
+			"id": "results",
+			"position": {
+				"x": 242.54181950362516,
+				"y": 714.5413748870188
+			},
+			"selected": false,
+			"type": "results"
+		},
+		{
+			"data": {
+				"capsule_id": "bc02ffcd-a183-4ac4-8bda-021dc1cf01cb"
+			},
+			"id": "capsule_hybrid_generation_ecephys_2",
+			"position": {
+				"x": 312.590219522183,
+				"y": -146.17699485858734
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"id": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+			"position": {
+				"x": 275.2037807580506,
+				"y": -451.06568872294804
+			},
+			"selected": false,
+			"type": "dataset"
+		},
+		{
+			"data": {
+				"capsule_id": "e8752278-0e96-4e74-a179-2c838bc0c186"
+			},
+			"id": "capsule_hybrid_evaluation_ecephys_6",
+			"position": {
+				"x": 73.23789467735395,
+				"y": 467.59206912076127
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "05eaf483-9ca3-4a9e-8da8-7d23717f6faf"
+			},
+			"id": "capsule_preprocess_ecephys_3",
+			"position": {
+				"x": 33.666986248819114,
+				"y": 40.713834562934096
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "9c169ec3-5933-4b10-808b-6fa4620e37b7"
+			},
+			"id": "capsule_spikesort_kilosort_25_ecephys_4",
+			"position": {
+				"x": 336.6621835627293,
+				"y": 251.41257390950642
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "e41ff24a-791c-4a11-a810-0106707d3617"
+			},
+			"id": "capsule_spikesort_kilosort_4_ecephys_5",
+			"position": {
+				"x": 43.891885158750256,
+				"y": 268.07924057617333
+			},
+			"selected": false,
+			"type": "capsule"
+		},
+		{
+			"data": {
+				"capsule_id": "b68f9aec-7e8d-4862-865a-38081f5a6aeb"
+			},
+			"id": "capsule_spikesort_spyking_circus_2_ecephys_7",
+			"position": {
+				"x": -256.61593811525836,
+				"y": 263.1791195445914
+			},
+			"selected": false,
+			"type": "capsule"
+		}
+	],
+	"timestamp": 1783451787072,
+	"viewport": {
+		"x": 362.06548103139346,
+		"y": 1194.684830556211,
+		"zoom": 1.0991736643602568
+	}
+}

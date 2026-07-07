@@ -1,0 +1,223 @@
+{
+	"version": 1,
+	"processes": [
+		{
+			"name": "capsule_job_dispatch_ecephys_1",
+			"capsule": {
+				"id": "cb734cf3-2f88-4b69-bf0a-d5869e6706e3",
+				"name": "Job Dispatch Ecephys",
+				"slug": "5832718",
+				"commit": "628f38566b5545ba5dba8b8382cab2d18ccff743",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 4,
+				"memory": 32
+			},
+			"inputs": [
+				{
+					"id": "SLwUATFoY3G3FUmD",
+					"source_id": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+					"type": "dataset",
+					"name": "ecephys",
+					"source_path": "ecephys/",
+					"target_path": "ecephys_session",
+					"collect": true
+				}
+			]
+		},
+		{
+			"name": "capsule_hybrid_generation_ecephys_2",
+			"capsule": {
+				"id": "bc02ffcd-a183-4ac4-8bda-021dc1cf01cb",
+				"name": "Hybrid Generation Ecephys",
+				"slug": "9051504",
+				"commit": "912a3bc5c067df74f5c82eef1e35fbe95e4fc4f5",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 64
+			},
+			"inputs": [
+				{
+					"id": "GNMHJovWVsvlpwwc",
+					"source_id": "capsule_job_dispatch_ecephys_1",
+					"type": "capsule",
+					"name": "Job Dispatch Ecephys",
+					"flatten": true
+				},
+				{
+					"id": "x6MaNOXUGyD3sFT2",
+					"source_id": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+					"type": "dataset",
+					"name": "ecephys",
+					"source_path": "ecephys/",
+					"target_path": "ecephys_session",
+					"collect": true
+				}
+			]
+		},
+		{
+			"name": "capsule_preprocess_ecephys_3",
+			"capsule": {
+				"id": "05eaf483-9ca3-4a9e-8da8-7d23717f6faf",
+				"name": "Preprocess Ecephys",
+				"slug": "0874799",
+				"commit": "86e1945980fd49fcfc26b42c5c803b51ea655984",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 64
+			},
+			"inputs": [
+				{
+					"id": "xvUBXVKYOG94WYbz",
+					"source_id": "capsule_hybrid_generation_ecephys_2",
+					"type": "capsule",
+					"name": "Hybrid Generation Ecephys",
+					"source_path": "recordings/",
+					"flatten": true
+				},
+				{
+					"id": "AQE4OVJXpfGVKRrA",
+					"source_id": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+					"type": "dataset",
+					"name": "ecephys",
+					"source_path": "ecephys/",
+					"target_path": "ecephys_session",
+					"collect": true
+				}
+			]
+		},
+		{
+			"name": "capsule_spikesort_kilosort_25_ecephys_4",
+			"capsule": {
+				"id": "9c169ec3-5933-4b10-808b-6fa4620e37b7",
+				"name": "Spikesort Kilosort2.5 Ecephys",
+				"slug": "2633671",
+				"commit": "1c79356c17a54db6f8925610b82c02220c3a213f",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 61,
+				"gpus": 1
+			},
+			"inputs": [
+				{
+					"id": "uGFZq7M7ffTqm8ld",
+					"source_id": "capsule_preprocess_ecephys_3",
+					"type": "capsule",
+					"name": "Preprocess Ecephys"
+				}
+			]
+		},
+		{
+			"name": "capsule_spikesort_kilosort_4_ecephys_5",
+			"capsule": {
+				"id": "e41ff24a-791c-4a11-a810-0106707d3617",
+				"name": "Spikesort Kilosort4 Ecephys",
+				"slug": "2928576",
+				"commit": "1d4f0e8cb30377937dcb95fc4bb7a2db773a83b2",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 64,
+				"gpus": 1
+			},
+			"inputs": [
+				{
+					"id": "q18zR8M4IBGixrjH",
+					"source_id": "capsule_preprocess_ecephys_3",
+					"type": "capsule",
+					"name": "Preprocess Ecephys"
+				}
+			]
+		},
+		{
+			"name": "capsule_hybrid_evaluation_ecephys_6",
+			"capsule": {
+				"id": "e8752278-0e96-4e74-a179-2c838bc0c186",
+				"name": "Hybrid Evaluation Ecephys",
+				"slug": "5273805",
+				"commit": "99d81857887badf0903b42a84e8c6ff738a6fddb",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 128
+			},
+			"inputs": [
+				{
+					"id": "3iiR9962bAKr5SCf",
+					"source_id": "capsule_spikesort_spyking_circus_2_ecephys_7",
+					"type": "capsule",
+					"name": "Spikesort SpykingCircus2 Ecephys",
+					"target_path": "sc2",
+					"collect": true
+				},
+				{
+					"id": "U3hL45g8KOpwmmjH",
+					"source_id": "7e95a602-bcd4-4c0b-9337-b365c90eac51",
+					"type": "dataset",
+					"name": "ecephys",
+					"source_path": "ecephys/",
+					"target_path": "ecephys_session",
+					"collect": true
+				},
+				{
+					"id": "QId330MQKcOFTD4U",
+					"source_id": "capsule_hybrid_generation_ecephys_2",
+					"type": "capsule",
+					"name": "Hybrid Generation Ecephys",
+					"source_path": "flattened/",
+					"collect": true
+				},
+				{
+					"id": "AA8t6cx62RizeKtl",
+					"source_id": "capsule_spikesort_kilosort_4_ecephys_5",
+					"type": "capsule",
+					"name": "Spikesort Kilosort4 Ecephys",
+					"target_path": "ks4",
+					"collect": true
+				},
+				{
+					"id": "oVHrHwNNd1H2SExI",
+					"source_id": "capsule_spikesort_kilosort_25_ecephys_4",
+					"type": "capsule",
+					"name": "Spikesort Kilosort2.5 Ecephys",
+					"target_path": "ks25",
+					"collect": true
+				}
+			],
+			"results": {
+				"id": "e8752278-0e96-4e74-a179-2c838bc0c186"
+			}
+		},
+		{
+			"name": "capsule_spikesort_spyking_circus_2_ecephys_7",
+			"capsule": {
+				"id": "b68f9aec-7e8d-4862-865a-38081f5a6aeb",
+				"name": "Spikesort SpykingCircus2 Ecephys",
+				"slug": "1515622",
+				"commit": "1214437bf1c81ec79d97ca196e259448fbf5b9c9",
+				"app_panel": true
+			},
+			"resources": {
+				"cpus": 16,
+				"memory": 128
+			},
+			"inputs": [
+				{
+					"id": "lxnLg74PCuvaKE9f",
+					"source_id": "capsule_preprocess_ecephys_3",
+					"type": "capsule",
+					"name": "Preprocess Ecephys"
+				}
+			]
+		}
+	]
+}
